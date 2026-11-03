@@ -257,6 +257,12 @@ a.badge:hover { border-color: var(--accent); text-decoration: none; }
 .page-body.prose-col > p,
 .page-body.prose-col > ul li,
 .page-body.prose-col > ol li { text-align: justify; hyphens: auto; }
+@media (max-width: 760px) {
+  .pi p:not(.kicker):not(.person-links),
+  .page-body.prose-col > p,
+  .page-body.prose-col > ul li,
+  .page-body.prose-col > ol li { text-align: left; hyphens: manual; }
+}
 
 /* trajectory on phones: one full-width row per step, chevrons point down and interlock */
 @media (max-width: 760px) {
