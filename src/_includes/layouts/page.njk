@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+<section class="page-head">
+  <div class="wrap">
+    {% if kicker %}<p class="kicker">{{ kicker }}</p>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if lede %}<p class="lede {{ ledeClass }}">{{ lede }}</p>{% endif %}
+  </div>
+</section>
+<div class="wrap page-body {% if prose != false %}prose{% endif %} {{ proseClass }}">
+  {{ content | safe }}
+</div>

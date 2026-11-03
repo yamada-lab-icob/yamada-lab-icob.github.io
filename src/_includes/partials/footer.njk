@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">{{ site.title }}</p>
+      <p>{{ site.institute }}<br>{{ site.university }}<br>{{ site.address }}</p>
+    </div>
+    <div>
+      <p class="footer-title">Contact</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p><a href="/join/">Join the lab →</a></p>
+    </div>
+    <div>
+      <p class="footer-title">Elsewhere</p>
+      <ul class="footer-links">
+        {% if site.links.icob_profile %}<li><a href="{{ site.links.icob_profile }}">ICOB profile</a></li>{% endif %}
+        {% if site.links.google_scholar %}<li><a href="{{ site.links.google_scholar }}">Google Scholar</a></li>{% endif %}
+        {% if site.links.orcid %}<li><a href="{{ site.links.orcid }}">ORCID</a></li>{% endif %}
+        {% if site.links.github %}<li><a href="{{ site.links.github }}">GitHub</a></li>{% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© {{ "" | year }} {{ site.title }}</span>
+    <a href="{{ site.institute_url }}">{{ site.institute }}</a>
+  </div>
+</footer>

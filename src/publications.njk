@@ -1,0 +1,24 @@
+---
+layout: layouts/page.njk
+title: Publications
+kicker: Selected papers
+permalink: /publications/
+prose: false
+---
+{% from "partials/pub.njk" import pub %}
+<p class="pub-meta">
+  Lab members are in <strong>bold</strong>.
+  {% if site.links.google_scholar %}See also <a href="{{ site.links.google_scholar }}">Google Scholar</a>.{% endif %}
+  {% if site.links.orcid %}Complete publication record on <a href="{{ site.links.orcid }}">ORCID</a>.{% endif %}
+</p>
+
+<nav class="year-jump" aria-label="Jump to year">
+  {% for g in publications.byYear %}<a href="#y{{ g.year }}">{{ g.year }}</a>{% endfor %}
+</nav>
+
+{% for g in publications.byYear %}
+<section class="pub-year" id="y{{ g.year }}">
+  <h2>{{ g.year }}</h2>
+  <ul class="pub-list">{% for p in g.papers %}{{ pub(p) }}{% endfor %}</ul>
+</section>
+{% endfor %}

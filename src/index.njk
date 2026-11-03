@@ -1,0 +1,102 @@
+---
+layout: layouts/base.njk
+title: Home
+bodyClass: home
+---
+{% from "partials/pub.njk" import pub %}
+
+<section class="hero">
+  {% if site.hero.image %}
+    <img class="hero-media" src="{{ site.hero.image }}" alt="{{ site.hero.image_caption }}">
+  {% else %}
+    <canvas class="hero-media" id="morphogen" data-intensity="{{ site.hero.intensity or 0.55 }}" data-speed="{{ site.hero.speed or 2 }}" aria-hidden="true"></canvas>
+  {% endif %}
+  <div class="hero-shade"></div>
+  <div class="wrap hero-content">
+    <p class="kicker kicker-light">{{ site.institute }} · {{ site.university }}</p>
+    <h1 class="hero-title">We decode and program <em>morphogenesis</em></h1>
+    <p class="hero-lede">We uncover and rewrite the rules that convert signal inputs into tissue architecture.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="/research/">Our research</a>
+      <a class="btn btn-ghost" href="/join/">Join us</a>
+    </div>
+  </div>
+  <p class="hero-caption">
+    {% if site.hero.image %}{{ site.hero.image_caption }}{% else %}<span data-hero-caption>A live simulation. Touch or move your cursor over it to perturb it.</span>{% endif %}
+  </p>
+</section>
+
+{% if site.recruiting.show %}
+<a class="recruit" href="{{ site.recruiting.link }}">
+  <span class="wrap recruit-inner"><span class="pulse"></span>{{ site.recruiting.text }} <span class="recruit-cta">Learn more →</span></span>
+</a>
+{% endif %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Our question</p>
+      <h2 class="display">{{ research.question }}</h2>
+    </div>
+    <div class="axes">
+      {% for axis in research.axes %}
+      <a class="axis-card" href="/research/#{{ axis.id }}">
+        {% include "partials/axis-icon.njk" %}
+        <span class="axis-num">{{ axis.number }}</span>
+        <h3>{{ axis.title }}</h3>
+        <p class="axis-sub">{{ axis.subtitle }}</p>
+        <p>{{ axis.summary }}</p>
+        <span class="more">Read more →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="news">
+  <div class="wrap split">
+    <div>
+      <div class="section-head section-head-row">
+        <h2>News</h2><a href="/news/">All news →</a>
+      </div>
+      <ul class="news-list">
+        {% for item in collections.news | limit(4) %}
+        <li>
+          <time datetime="{{ item.date | isoDate }}">{{ item.date | monthYear }}</time>
+          <div class="news-body">{{ item.content | safe }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <div class="section-head section-head-row">
+        <h2>Selected papers</h2><a href="/publications/">All publications →</a>
+      </div>
+      <ul class="pub-list pub-list-compact">
+        {% for p in publications.all | limit(3) %}{{ pub(p) }}{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Build the lab with us.</h2>
+      <p>We are a new lab in Taipei, opened in October 2026. Early members shape what we work on and how we work.</p>
+    </div>
+    <a class="btn" href="/join/">Open positions</a>
+  </div>
+</section>
+
+{% if not site.hero.image %}
+<script>
+  // hero animation from site.yml; preview the other one with ?hero=selforg or ?hero=turing
+  (() => {
+    const pick = new URLSearchParams(location.search).get("hero") || "{{ site.hero.animation or 'selforg' }}";
+    const s = document.createElement("script");
+    s.src = pick === "turing" ? "/assets/js/morphogen.js" : "/assets/js/selforg.js";
+    document.body.appendChild(s);
+  })();
+</script>
+{% endif %}

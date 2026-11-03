@@ -1,0 +1,48 @@
+# Site-wide settings. Edit once; rarely touched afterwards.
+title: Yamada Lab
+tagline: Programmable Morphogenesis
+description: >-
+  The Yamada Lab at ICOB, Academia Sinica decodes and programs morphogenesis:
+  uncovering and rewriting the rules that convert signal inputs into tissue architecture.
+url: https://yamada-lab-icob.github.io   # switch to https://yamada-lab.org once the custom domain is live
+
+institute: Institute of Cellular and Organismic Biology (ICOB)
+institute_url: https://www.icob.sinica.edu.tw/
+university: Academia Sinica
+address: 128 Academia Road, Section 2, Nankang, Taipei 11529, Taiwan
+email: toshiyamada@as.edu.tw
+
+# Color theme: headline gradient, research icons and hero cells (defined in src/assets/css/themes.css).
+#   brand | sunset | plasma | viridis | berlin | tealgrn   (preview any of them with ?theme=<name>)
+theme: viridis
+
+# Hero: leave image empty to show a live animation.
+#   animation: selforg = cells self-organize into a shell / node (alternating)
+#              turing  = reaction–diffusion pattern (mono palette)
+# To use a real figure instead, drop it in src/assets/img/ and set e.g. image: /assets/img/hero.jpg
+hero:
+  animation: selforg
+  intensity: 0.55      # 0.1–1: how bright the animation is (lower = headline stands out more)
+  speed: 2             # 1–3: simulation speed (lower = slower, calmer)
+  image: ""
+  image_caption: ""
+
+# Recruiting banner on the homepage. Set show: false to hide.
+recruiting:
+  show: true
+  text: We're recruiting research assistants, postdocs, and students.
+  link: /join/
+
+nav:
+  - { label: Research, url: /research/ }
+  - { label: Team, url: /team/ }
+  - { label: Publications, url: /publications/ }
+  - { label: News, url: /news/ }
+  - { label: Join us, url: /join/ }
+
+# Leave a value empty to hide that link.
+links:
+  orcid: https://orcid.org/0000-0001-7200-2433
+  google_scholar: https://scholar.google.com/citations?user=yG609L8AAAAJ&hl=en
+  github: https://github.com/yamada-lab-icob
+  icob_profile: ""

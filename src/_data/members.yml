@@ -1,0 +1,20 @@
+# Team. One entry per person. When someone leaves, set alumni: true (and fill `now:`).
+# photo: put a square image in src/assets/img/people/ and give its path; leave empty for initials.
+#
+# Fields: name, role, photo, email, bio, links (orcid/scholar/github/website), start, alumni, now
+
+- name: Toshimichi (Toshi) Yamada
+  role: Principal Investigator
+  photo: /assets/img/people/toshi-yamada.jpg
+  email: toshiyamada@as.edu.tw
+  start: 2026
+  pi: true
+  bio: >-
+    Toshi is an Assistant Research Fellow at the Institute of Cellular and Organismic Biology (ICOB),
+    Academia Sinica. Toshi's PhD at the University of Tokyo, with Takeaki Ozawa, developed
+    genetically encoded fluorescent probes to visualize RNA in living cells. As a postdoc with
+    Nobuyoshi Akimitsu at the University of Tokyo, Toshi studied how RNA decay shapes gene expression dynamics.
+    At UCSF, with Wendell Lim and Ophir Klein, Toshi engineered synthetic organizer cells that guide
+    stem cell development through spatial and biochemical instructions. Toshi started the lab in October 2026.
+  links:
+    orcid: https://orcid.org/0000-0001-7200-2433

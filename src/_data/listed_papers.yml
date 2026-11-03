@@ -1,0 +1,11 @@
+# Which papers appear on the site, and how each one is labelled.
+# `key` = citation key in bibliography/papers.bib; `type` = label shown on the page
+# (Article, Perspective, Review, Preprint, ...). Papers in papers.bib that are not listed here stay hidden,
+# so a fresh Zotero export of papers.bib never changes what the site shows.
+# The homepage shows the first three entries (newest year first).
+- key: yamada2025
+  type: Article
+- key: ewe2025
+  type: Perspective
+- key: trentesaux2023
+  type: Perspective

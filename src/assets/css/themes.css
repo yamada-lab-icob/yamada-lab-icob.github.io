@@ -1,0 +1,64 @@
+/* Color themes: headline gradient (--g1..3), axis icons (--i1..4, dark → light), hero cells.
+   Pick one in site.yml (theme:), or preview any page with ?theme=<name>. */
+
+:root, [data-theme="brand"] {          /* Cyan-Magenta */
+  --g1: #22d3ee; --g2: #a78bfa; --g3: #e879f9;
+  --i1: #0e7490; --i2: #22d3ee; --i3: #a78bfa; --i4: #e879f9;
+  --cell-stem: rgba(232,121,249,.92); --cell-stem-glow: rgba(167,139,250,.40); --cell-stem-name: "magenta";
+  --cell-org:  rgba(120,236,255,1);   --cell-org-glow:  rgba(34,211,238,.50);  --cell-org-name: "cyan";
+  /* site UI (other themes inherit these brand values unless they set their own) */
+  --accent: #0e7490; --accent-ink: #155e75; --accent-rgb: 14,116,144;
+  --soft-bg: #ecfeff; --soft-border: #a5f3fc; --alt-bg: #fdf4ff; --alt-border: #f5d0fe; --alt-ink: #a21caf;
+  --banner-a: #0b3b4a; --banner-b: #3b1a5a; --pulse-rgb: 94,234,212; --on-dark-link: #a5f3fc;
+  --glow-a-rgb: 34,211,238; --glow-b-rgb: 232,121,249;
+  --logo-1: #5eead4; --logo-2: #0e7490; --logo-3: #0b1220; --logo-dot: #f0abfc;
+  --t1: #0e7490; --t2: #0d9488; --t3: #6d5bd0; --t4: #9d4edd; --t5: #c026d3;
+  --t1-ink: #fff; --t2-ink: #fff; --t3-ink: #fff; --t4-ink: #fff; --t5-ink: #fff;
+}
+[data-theme="sunset"] {                /* CARTO Sunset */
+  --g1: #fcd38e; --g2: #f0828a; --g3: #b864b6;
+  --i1: #5c53a5; --i2: #a059a0; --i3: #eb7f86; --i4: #f8a07e;
+  --cell-stem: rgba(235,127,134,.92); --cell-stem-glow: rgba(206,102,147,.40); --cell-stem-name: "coral";
+  --cell-org:  rgba(243,231,155,1);   --cell-org-glow:  rgba(250,196,132,.50); --cell-org-name: "yellow";
+}
+[data-theme="plasma"] {                /* Plasma */
+  --g1: #fcce25; --g2: #f2844b; --g3: #cc4778;
+  --i1: #3a049a; --i2: #7e03a8; --i3: #cc4778; --i4: #f89540;
+  --cell-stem: rgba(204,71,120,.92);  --cell-stem-glow: rgba(126,3,168,.40);   --cell-stem-name: "pink";
+  --cell-org:  rgba(240,249,33,1);    --cell-org-glow:  rgba(248,149,64,.50);  --cell-org-name: "yellow";
+}
+[data-theme="viridis"] {               /* Viridis */
+  --g1: #26a6a0; --g2: #5ec962; --g3: #fde725;
+  --i1: #3b528b; --i2: #21918c; --i3: #5ec962; --i4: #b5de2b;
+  --cell-stem: rgba(47,179,168,.92);  --cell-stem-glow: rgba(33,145,140,.40);  --cell-stem-name: "teal";
+  --cell-org:  rgba(253,231,37,1);    --cell-org-glow:  rgba(94,201,98,.50);   --cell-org-name: "yellow";
+  /* site UI: viridis scale #440154 #414487 #2a788e #21918c #22a884 #7ad151 #bddf26 #fde725 */
+  --accent: #2a788e; --accent-ink: #355f8d; --accent-rgb: 42,120,142;
+  --soft-bg: #effaf0; --soft-border: #b7e4a8; --alt-bg: #f4effa; --alt-border: #dccbef; --alt-ink: #482475;
+  --banner-a: #3b0f63; --banner-b: #1b6a6f; --pulse-rgb: 253,231,37; --on-dark-link: #bddf26;
+  --glow-a-rgb: 33,145,140; --glow-b-rgb: 189,223,38;
+  --logo-1: #7ad151; --logo-2: #21918c; --logo-3: #440154; --logo-dot: #fde725;
+  --t1: #440154; --t2: #3b528b; --t3: #21918c; --t4: #5ec962; --t5: #fde725;
+  --t1-ink: #fff; --t2-ink: #fff; --t3-ink: #fff; --t4-ink: #0b1220; --t5-ink: #0b1220;
+}
+[data-theme="berlin"] {                /* Berlin (dark-centered diverging) */
+  --g1: #85c0f9; --g2: #c6b4dc; --g3: #f4a7a0;
+  --i1: #2d6aa6; --i2: #85c0f9; --i3: #c0705c; --i4: #f4a7a0;
+  --cell-stem: rgba(242,163,154,.92); --cell-stem-glow: rgba(180,90,74,.40);   --cell-stem-name: "salmon";
+  --cell-org:  rgba(140,200,255,1);   --cell-org-glow:  rgba(59,127,196,.50);  --cell-org-name: "sky blue";
+}
+[data-theme="tealgrn"] {               /* CARTO TealGrn / Mint */
+  --g1: #3cb8b0; --g2: #67dba5; --g3: #b0f2bc;
+  --i1: #257d98; --i2: #38b2a3; --i3: #67dba5; --i4: #89e8ac;
+  --cell-stem: rgba(44,152,160,.92);  --cell-stem-glow: rgba(37,125,152,.40);  --cell-stem-name: "teal";
+  --cell-org:  rgba(176,242,188,1);   --cell-org-glow:  rgba(103,219,165,.50); --cell-org-name: "mint";
+}
+/* earlier cell palettes, kept for comparison (brand headline + icons) */
+[data-theme="mono"] {
+  --cell-stem: rgba(92,150,184,.95);  --cell-stem-glow: rgba(52,108,146,.35);  --cell-stem-name: "blue";
+  --cell-org:  rgba(236,249,255,1);   --cell-org-glow:  rgba(150,220,245,.45); --cell-org-name: "white";
+}
+[data-theme="movie"] {
+  --cell-stem: rgba(255,112,64,.95);  --cell-stem-glow: rgba(220,50,30,.40);   --cell-stem-name: "orange";
+  --cell-org:  rgba(110,214,255,1);   --cell-org-glow:  rgba(40,140,255,.50);  --cell-org-name: "cyan";
+}

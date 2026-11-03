@@ -1,0 +1,16 @@
+{
+  "name": "yamadalab.github.io",
+  "version": "1.0.0",
+  "description": "Yamada Lab website (ICOB, Academia Sinica)",
+  "scripts": {
+    "start": "eleventy --serve --port 8080",
+    "build": "eleventy"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@retorquere/bibtex-parser": "^12.1.13",
+    "js-yaml": "^5.5.0"
+  },
+  "private": true
+}

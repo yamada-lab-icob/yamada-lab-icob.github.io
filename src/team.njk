@@ -1,0 +1,48 @@
+---
+layout: layouts/page.njk
+title: Team
+kicker: Who we are
+lede: We are building a small, focused team of experimentalists and computational biologists.
+permalink: /team/
+ledeClass: lede-wide
+prose: false
+---
+{% set pis = members | current | selectattr("pi") %}
+{% set others = members | current | rejectattr("pi") %}
+
+{% for m in pis %}
+<article class="pi">
+  <div class="avatar avatar-lg">{% if m.photo %}<img src="{{ m.photo }}" alt="{{ m.name }}">{% else %}<span>{{ m.name | initials }}</span>{% endif %}</div>
+  <div>
+    <p class="kicker">{{ m.role }}</p>
+    <h2>{{ m.name }}</h2>
+    <p>{{ m.bio }}</p>
+    <p class="person-links">
+      {% if m.email %}<a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}
+      {% for k, v in m.links %}{% if v %}<a href="{{ v }}">{{ k | linkLabel }}</a>{% endif %}{% endfor %}
+    </p>
+  </div>
+</article>
+{% endfor %}
+
+{% if others | length %}
+<h2 class="people-h">Lab members</h2>
+<div class="people-grid">
+  {% for m in others %}
+  <article class="person">
+    <div class="avatar">{% if m.photo %}<img src="{{ m.photo }}" alt="{{ m.name }}">{% else %}<span>{{ m.name | initials }}</span>{% endif %}</div>
+    <h3>{{ m.name }}</h3>
+    <p class="person-role">{{ m.role }}</p>
+    {% if m.bio %}<p class="person-bio">{{ m.bio }}</p>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% set alum = members | alumni %}
+{% if alum.length %}
+<h2 class="people-h">Alumni</h2>
+<ul class="alumni">
+  {% for m in alum %}<li><strong>{{ m.name }}</strong>, {{ m.role }}{% if m.now %} → {{ m.now }}{% endif %}</li>{% endfor %}
+</ul>
+{% endif %}

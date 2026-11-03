@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="{{ site.theme or 'brand' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.title }} · {{ site.tagline }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/themes.css">
+  <script>
+    // theme preview: ?theme=<name> (kept while browsing this tab); ?theme=reset returns to site.yml's theme
+    (() => {
+      const q = new URLSearchParams(location.search).get("theme");
+      if (q === "reset") sessionStorage.removeItem("theme"); else if (q) sessionStorage.setItem("theme", q);
+      const t = sessionStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>
+<body class="{{ bodyClass }}">
+  <a class="skip" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script>
+    // mobile nav toggle
+    const t = document.querySelector('.nav-toggle');
+    t && t.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+    // homepage: switch the fixed header from transparent to solid once past the hero
+    const header = document.querySelector('.site-header'), hero = document.querySelector('.hero');
+    if (header && hero) {
+      const update = () => header.classList.toggle('scrolled', window.scrollY > hero.offsetHeight - header.offsetHeight);
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+title: News
+kicker: What's happening
+permalink: /news/
+prose: false
+---
+<ul class="news-list news-list-full">
+  {% for item in collections.news %}
+  <li>
+    <time datetime="{{ item.date | isoDate }}">{{ item.date | monthYear }}</time>
+    <div class="news-body">{{ item.content | safe }}</div>
+  </li>
+  {% endfor %}
+</ul>

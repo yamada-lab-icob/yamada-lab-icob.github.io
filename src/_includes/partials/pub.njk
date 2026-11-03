@@ -1,0 +1,12 @@
+{% macro pub(p) %}
+<li class="pub">
+  {% if p.kind %}<p class="pub-type pub-type-{{ p.kind | lower }}">{{ p.kind }}</p>{% endif %}
+  <p class="pub-title">{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+  <p class="pub-authors">{% for a in p.authors %}{% if a.isPI %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  <p class="pub-venue">
+    <em>{{ p.venue }}</em>{% if p.volume %} {{ p.volume }}{% endif %}{% if p.pages %}, {{ p.pages }}{% endif %} ({{ p.year }})
+    {% if p.preprint %}<span class="badge badge-preprint">Preprint</span>{% endif %}
+    {% if p.doi %}<a class="badge" href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}
+  </p>
+</li>
+{% endmacro %}

@@ -1,0 +1,42 @@
+# The three research axes. Used on the homepage cards and the Research page.
+# Edit when the research direction shifts (a few times a year).
+question: How does multicellular structure emerge?
+
+axes:
+  - id: decode
+    number: "01"
+    title: Decode
+    subtitle: How natural systems read signals
+    summary: >-
+      We break the "signal → fate" mapping into separable layers and measure each one in
+      stem-cell-derived embryo models.
+    points:
+      - "<strong>Input</strong>: ligand identity, inhibitor type, and the spatial geometry of the source"
+      - "<strong>Field</strong>: gradient range, steepness, and temporal dynamics"
+      - "<strong>Interpretation</strong>: cell state (naive vs. primed) and feedback from responding cells"
+
+  - id: reprogram
+    number: "02"
+    title: Reprogram
+    subtitle: Rewriting how tissues are patterned
+    summary: >-
+      We use synthetic organizer cells and engineered niches to change the signals cells receive
+      (their identity, timing, and spatial arrangement) and to rewrite how cells interpret them.
+    points:
+      - "Perturb the inputs: swap or combine signals (Wnt, Nodal, mechanical cues, synthetic proteins), change their timing, and shift boundaries or domain number"
+      - "Rewrite interpretation: threshold tuning, signal memory, synthetic cross-talk, feedback rewiring"
+      - Build synthetic niches with ECM, stromal context, and state-responsive organizers
+
+  - id: explore
+    number: "03"
+    title: Explore
+    subtitle: Beyond natural development
+    summary: >-
+      Using the rules we decode, we explore forms that nature has not made, and design the
+      signals to build them.
+    points:
+      - "Evolutionary rewiring: the same input, interpreted differently, gives a different structure"
+      - New morphologies beyond natural development
+      - "Inverse design: from a target structure to the signals that produce it"
+
+trajectory: [Measure, Decode, Control, Rewire, Expand]
