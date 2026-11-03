@@ -29,7 +29,6 @@ proseClass: prose-col
 
 We want this lab to be a place where junior scientists grow into independent researchers, learning from several fields at once.
 
-- **Core question first.** Our work traces back to one question: how does multicellular structure emerge?
 - **Open to new techniques and fields.** Developmental biology, synthetic biology, imaging, and modeling meet in our work. We encourage everyone to pick up methods from outside their training, and to bring new ones into the lab.
 - **Collaborative.** Experimentalists and computational biologists work on the same questions, and we help each other succeed.
 - **English is the official language of the lab.**

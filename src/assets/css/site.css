@@ -257,3 +257,13 @@ a.badge:hover { border-color: var(--accent); text-decoration: none; }
 .page-body.prose-col > p,
 .page-body.prose-col > ul li,
 .page-body.prose-col > ol li { text-align: justify; hyphens: auto; }
+
+/* trajectory on phones: one full-width row per step, chevrons point down and interlock */
+@media (max-width: 760px) {
+  .trajectory { flex-direction: column; }
+  .trajectory li { flex: none; display: flex; align-items: baseline; gap: 12px; padding: 26px 20px 24px;
+    clip-path: polygon(0 0, 50% 18px, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px)); }
+  .trajectory li:first-child { padding-top: 16px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px)); }
+  .trajectory li + li { margin-top: -15px !important; }
+  .trajectory span { display: inline; }
+}
